@@ -9,6 +9,16 @@ body {
   height: 100vh;
   margin: 0 auto;
   border: 1px solid #333; }
-  .wrapper.login .header-app img {
-    display: block;
-    margin: 0px 0px 0px auto; }
+  .wrapper.login {
+    padding: 3rem; }
+    .wrapper.login .header-app img {
+      display: block;
+      margin: 0px 0px 0px auto; }
+      @media (max-width: 767px) {
+        .wrapper.login .header-app img {
+          margin: 0 auto; } }
+    .wrapper.login .logo-app a {
+      display: block; }
+      .wrapper.login .logo-app a img {
+        display: block;
+        margin: 0px auto; }
