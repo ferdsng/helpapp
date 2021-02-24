@@ -17,12 +17,34 @@ head
 
 
 body
-    .wrapper
+    .wrapper.login
+        .container
+            .row.justify-content-end 
+                .col-lg-12.col-md-12.col-sm-12.col-12
+                    .header-app
+                        img(src="images/kia-agencia-logo.png")
+            .row.align-items-center
+                .col-lg-7.col-md-7.col-sm-8.col-6
+                    .logo-app
+                        a(href="#") 
+                            img.img-fluid(src="images/helpapp-logo.png")
+                .col-lg-5.col-md-5.col-sm-12.col-12
+                    .login-app
+                        form(action="#")
+                            .form-group
+                                input.form-control.form-control-lg(type="text", placeholder="NOMBRE COMPLETO")
+                            .form-group
+                                input.form-control.form-control-lg(type="tel", placeholder="NÚMERO DE TELÉFONO")
+                            .form-group
+                                input.form-control.form-control-lg(type="email", placeholder="CORREO ELECTRÓNICO")
+            .row
+
+
 
 
     |
     |
-    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+    script(src='js/jquery-3.5.1.min.js')
 
     
 
