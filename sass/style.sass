@@ -61,30 +61,51 @@ body
                 margin: 0 auto
 
 .dashboard
-    display: grid
-    grid-template-columns: 240px 1fr
-    grid-template-rows: 1fr
-    gap: 10px
-    border: 1px solid $grisheader
-    .menu-sidebar
+    .sidebar-menu
         height: 100vh
-        padding: $b*3 $b $b*2 $b 
+        padding: $b*3 $b $b*2 $b
+        background: $negro
+        @media (max-width:991px)
+            height: auto
+        .menu-mobile
+            display: grid !important
+            grid-template-columns: 1fr
+            grid-template-rows: repeat(4, 22vh)
+            .avatar-user
+                margin: 0 auto $b*2 auto
+                width: 50%
+            .asesor-data
+                text-align: center
+                margin-bottom: $b*1.5
+                h2.adviser-name
+                    color: $blanco
+                    font-size: $b*1.5
+                    margin: 0
+                h4.adviser-position
+                    color: $rojo
+                    text-transform: uppercase
+                    margin: 0
+                    font-size: $b
+                    letter-spacing: 1px
+                    font-weight: bold
+                p.adviser-email
+                    color: $blanco
+                    margin: 0
+            ul.navbar-nav
+                display: flex
+                flex-direction: column
+                width: 100%
+                li.nav-item
+                    width: 100%
+                    border-bottom: 1px solid $blanco
+                    &:last-child
+                        border-bottom: 0
+                    a.nav-link
+                        color: $blanco
+                        &:hover
+                            color: $grisheader
+            .badge
+                margin: 0 auto
+                width: 75%
 
-
-// .login
-//     width: 100%
-//     display: grid
-//     align-items: center
-//     justify-content: stretch
-//     grid-template-rows: 80px 1fr 80px
-//     grid-template-columns: 1fr 1fr
-//     gap: 10px
-//     padding: 2rem
-//     .header
-//         grid-column: 1/3
-//         @media (max-)
-//     .logo
-//         grid-column: 1/2
-//     .login-form
-//         grid-column: 2/3
 

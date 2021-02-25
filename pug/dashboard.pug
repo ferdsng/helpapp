@@ -1,33 +1,61 @@
 doctype html
 html(lang="es_MX")
+    head 
+        title Kia Help App
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+        meta(name="description", content="Help App")
 
-head 
-    title Kia Help App
-    meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-    meta(name="description", content="Help App")
-
-    |
-    |
-    |
-    <!-- CSS -->
-    link(href="css/style.css", rel="stylesheet")
-
+        |
+        |
+        |
+        <!-- CSS -->
+        link(href="css/style.css", rel="stylesheet")
 
 
-body
-    .container-fluid
-        .row
-            .col-md-3.col-xl-2
-                .sidebar-menu
 
-            .col-md-9.col-xl-10 
-                .content
-                
-    |
-    |
-    script(src="js/jquery-3.5.1.min.js")
-    script(src="js/bootstrap.bundle.min.js")
+    body
+        .dashboard
+            .fluid-container
+                .row.no-gutters
+                    .col-xl-3.col-lg-3.col-md-4.col-sm-12.col-12
+                        .sidebar-menu
+                            nav.navbar.navbar-expand-md
+                                button.navbar-toggler(type="button", data-toggle="collapse", data-target="#menuMobile", aria-controls="menuMobile", aria-expanded="false", aria-label="Toggle navigation")
+                                    span.navbar-toggler-icon
+
+                                |
+                                |
+
+                                .collapse.navbar-collapse.menu-mobile#menuMobile
+                                    .avatar-user
+                                        img.img-fluid(src="images/user-avatar.png", alt="")
+                                    .asesor-data
+                                        h2.adviser-name José David Gutierrez
+                                        h4.adviser-position ASESOR
+                                        p.adviser-email josedavidg@kia.com.mx
+                                        
+                                    ul.navbar-nav
+                                        li.nav-item
+                                            a.nav-link(href="#") Dashboard
+                                        li.nav-item
+                                            a.nav-link(href="#") Historial
+                                        li.nav-item
+                                            a.nav-link(href="#") Mensajes
+                                        li.nav-item
+                                            a.nav-link(href="#") Perfiles
+                                        li.nav-item
+                                            a.nav-link(href="#") Salir
+                                    .badge
+                                        img.img-fluid(src="images/helpapp-logo-badge.png")
+
+                    .col-xl-9.col-lg-9.col-md-8.col-sm-12.col-12 
+                        .content
+                    
+        |
+        |
+        script(src="js/jquery-3.5.1.min.js")
+        script(src="js/bootstrap.bundle.min.js")
 
 

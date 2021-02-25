@@ -1,77 +1,76 @@
 doctype html
 html(lang="es_MX")
+    head 
+        title Kia Help App
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+        meta(name="description", content="Help App")
 
-head 
-    title Kia Help App
-    meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-    meta(name="description", content="Help App")
-
-    |
-    |
-    |
-    <!-- CSS -->
-    link(href="css/style.css", rel="stylesheet")
-
+        |
+        |
+        |
+        <!-- CSS -->
+        link(href="css/style.css", rel="stylesheet")
 
 
-body
-    .wrapper.login
-        .container
-            .row.justify-content-end 
-                .col-lg-12.col-md-12.col-sm-12.col-12
-                    .header-app
-                        img(src="images/kia-agencia-logo.png")
-            .row.align-items-center.justify-content-center
-                .col-lg-7.col-md-7.col-sm-8.col-12
-                    .logo-app
-                        a.logo-app__link#modalAyuda(data-fancybox="", data-src="#trueModal", href="#")
-                            img.img-fluid(src="images/helpapp-logo.png")
-                .col-lg-5.col-md-5.col-sm-12.col-12
-                    .login-app
-                        form(action="#")
-                            .form-group
-                                input.form-control.form-control-lg(type="text", placeholder="NOMBRE COMPLETO")
-                            .form-group
-                                input.form-control.form-control-lg(type="tel", placeholder="NÚMERO DE TELÉFONO")
-                            .form-group
-                                input.form-control.form-control-lg(type="email", placeholder="CORREO ELECTRÓNICO")
-            .row.justify-content-center.align-items-center
-                .col-lg-8.col-md-12.col-sm-12.col-12
-                    .footer
-                        p.copyright CENTRO DE RESOLUCIÓN INMEDIATA DE QUEJAS | COPYRIGHT helpnetx.com
-                .col-lg-4.col-md-12.col-sm-12.col-12
-                    .footer
-                        p.legal Powered by 
-                            img(src="https://placehold.it/200x45/eaeaea", alt="")
+
+    body
+        .wrapper.login
+            .container
+                .row.justify-content-end 
+                    .col-lg-12.col-md-12.col-sm-12.col-12
+                        .header-app
+                            img(src="images/kia-agencia-logo.png")
+                .row.align-items-center.justify-content-center
+                    .col-lg-7.col-md-7.col-sm-8.col-12
+                        .logo-app
+                            a.logo-app__link#modalAyuda(data-fancybox="", data-src="#trueModal", href="#")
+                                img.img-fluid(src="images/helpapp-logo.png")
+                    .col-lg-5.col-md-5.col-sm-12.col-12
+                        .login-app
+                            form(action="#")
+                                .form-group
+                                    input.form-control.form-control-lg(type="text", placeholder="NOMBRE COMPLETO")
+                                .form-group
+                                    input.form-control.form-control-lg(type="tel", placeholder="NÚMERO DE TELÉFONO")
+                                .form-group
+                                    input.form-control.form-control-lg(type="email", placeholder="CORREO ELECTRÓNICO")
+                .row.justify-content-center.align-items-center
+                    .col-lg-8.col-md-12.col-sm-12.col-12
+                        .footer
+                            p.copyright CENTRO DE RESOLUCIÓN INMEDIATA DE QUEJAS | COPYRIGHT helpnetx.com
+                    .col-lg-4.col-md-12.col-sm-12.col-12
+                        .footer
+                            p.legal Powered by 
+                                img(src="https://placehold.it/200x45/eaeaea", alt="")
 
 
-        #trueModal(style="display: none;")
-            .row.justify-content-end 
-                .col-lg-12.col-md-12.col-sm-12.col-12
-                    .header
-                        img(src="images/kia-agencia-logo.png")
-            .row.align-items-center
-                .col-lg-5.col-md-5.col-sm-4.col-12
-                    img.img-fluid(src="images/helpapp-logo.png")
-                .col-lg-7.col-md-7.col-sm-8.col-12
-                    p Estimado Sr(a) 
-                        b.customer-name Smith, 
-                        | usted es lo más importante para nosotros, por lo que en unos momentos el 
-                        b.customer-name Asesor González 
-                        | se pondrá en contacto vía telefónica para atender y resolver su queja de inmediato.
-                    h3 Queja No A-0001
+            #trueModal(style="display: none;")
+                .row.justify-content-end 
+                    .col-lg-12.col-md-12.col-sm-12.col-12
+                        .header
+                            img(src="images/kia-agencia-logo.png")
+                .row.align-items-center
+                    .col-lg-5.col-md-5.col-sm-4.col-12
+                        img.img-fluid(src="images/helpapp-logo.png")
+                    .col-lg-7.col-md-7.col-sm-8.col-12
+                        p Estimado Sr(a) 
+                            b.customer-name Smith, 
+                            | usted es lo más importante para nosotros, por lo que en unos momentos el 
+                            b.customer-name Asesor González 
+                            | se pondrá en contacto vía telefónica para atender y resolver su queja de inmediato.
+                        h3 Queja No A-0001
 
 
-    |
-    |
-    script(src="js/jquery-3.5.1.min.js")
-    script(src="js/jquery.fancybox.min.js")
-    script.
-        $("#modalAyuda").fancybox({
-            transitionEffect: "fade",
-        });
+        |
+        |
+        script(src="js/jquery-3.5.1.min.js")
+        script(src="js/jquery.fancybox.min.js")
+        script.
+            $("#modalAyuda").fancybox({
+                transitionEffect: "fade",
+            });
 
 
 

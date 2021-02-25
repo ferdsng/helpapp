@@ -51,12 +51,50 @@ body {
       #trueModal .header img {
         margin: 0 auto; } }
 
-.dashboard {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  grid-template-rows: 1fr;
-  gap: 10px;
-  border: 1px solid #666; }
-  .dashboard .menu-sidebar {
-    height: 100vh;
-    padding: 3rem 1rem 2rem 1rem; }
+.dashboard .sidebar-menu {
+  height: 100vh;
+  padding: 3rem 1rem 2rem 1rem;
+  background: #1a1a1a; }
+  @media (max-width: 991px) {
+    .dashboard .sidebar-menu {
+      height: auto; } }
+  .dashboard .sidebar-menu .menu-mobile {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 22vh); }
+    .dashboard .sidebar-menu .menu-mobile .avatar-user {
+      margin: 0 auto 2rem auto;
+      width: 50%; }
+    .dashboard .sidebar-menu .menu-mobile .asesor-data {
+      text-align: center;
+      margin-bottom: 1.5rem; }
+      .dashboard .sidebar-menu .menu-mobile .asesor-data h2.adviser-name {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 0; }
+      .dashboard .sidebar-menu .menu-mobile .asesor-data h4.adviser-position {
+        color: #b90000;
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-weight: bold; }
+      .dashboard .sidebar-menu .menu-mobile .asesor-data p.adviser-email {
+        color: #fff;
+        margin: 0; }
+    .dashboard .sidebar-menu .menu-mobile ul.navbar-nav {
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      .dashboard .sidebar-menu .menu-mobile ul.navbar-nav li.nav-item {
+        width: 100%;
+        border-bottom: 1px solid #fff; }
+        .dashboard .sidebar-menu .menu-mobile ul.navbar-nav li.nav-item:last-child {
+          border-bottom: 0; }
+        .dashboard .sidebar-menu .menu-mobile ul.navbar-nav li.nav-item a.nav-link {
+          color: #fff; }
+          .dashboard .sidebar-menu .menu-mobile ul.navbar-nav li.nav-item a.nav-link:hover {
+            color: #666; }
+    .dashboard .sidebar-menu .menu-mobile .badge {
+      margin: 0 auto;
+      width: 75%; }
