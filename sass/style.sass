@@ -1,5 +1,6 @@
 @import url('bootstrap.min.css');
-@import url('jquery.fancybox.min.css')
+@import url('jquery.fancybox.min.css');
+@import url('jquery.dataTables.min.css');
 
 $b: 1rem
 $blanco: #fff
@@ -65,47 +66,173 @@ body
         height: 100vh
         padding: $b*3 $b $b*2 $b
         background: $negro
-        @media (max-width:991px)
+        @media (max-width:767px)
             height: auto
+            padding: 0
+        .navbar
+            @media (max-width:767px)
+                padding: $b/2
         .menu-mobile
-            display: grid !important
-            grid-template-columns: 1fr
-            grid-template-rows: repeat(4, 22vh)
-            .avatar-user
-                margin: 0 auto $b*2 auto
-                width: 50%
-            .asesor-data
-                text-align: center
-                margin-bottom: $b*1.5
-                h2.adviser-name
-                    color: $blanco
-                    font-size: $b*1.5
-                    margin: 0
-                h4.adviser-position
-                    color: $rojo
-                    text-transform: uppercase
-                    margin: 0
-                    font-size: $b
-                    letter-spacing: 1px
-                    font-weight: bold
-                p.adviser-email
-                    color: $blanco
-                    margin: 0
+            @media (min-width:768px)
+                flex-direction: column
+
+            .adviser-info
+                display: grid
+                grid-template-columns: 1fr 1fr
+                margin: $b/2 0
+                align-items: center
+                gap: 10px
+                @media (max-width:767px)
+                    grid-template-columns: 20% 80%
+                .avatar-user
+                    margin: 0 auto 0 auto
+                    grid-column: 1/3
+                    @media (max-width:767px)
+                        grid-column: 1/2
+                    img
+                        width: 60%
+                        display: block
+                        margin: 0 auto
+                        @media (max-width:767px)
+                            width: 60px
+                            
+                    
+                .asesor-data
+                    text-align: center
+                    margin: $b 0
+                    grid-column: 1/3
+                    @media (max-width:767px)
+                        text-align: left
+                        grid-column: 2/3
+                        margin: $b 0
+                    h2.adviser-name
+                        color: $blanco
+                        font-size: $b*1.5
+                        margin: 0
+                        @media (min-width:768px) and (max-width:991px)
+                            font-size: $b*1.25
+                        @media (max-width:767px)
+                            font-size: $b*1.15
+                    h4.adviser-position
+                        color: $rojo
+                        text-transform: uppercase
+                        margin: 0
+                        font-size: $b
+                        letter-spacing: 1px
+                        font-weight: bold
+                        @media (max-width:767px)
+                            font-size: $b
+                    p.adviser-email
+                        color: $blanco
+                        margin: 0
+                        @media (max-width:767px)
+                            font-size: $b - 0.1
             ul.navbar-nav
                 display: flex
                 flex-direction: column
                 width: 100%
+                    
                 li.nav-item
                     width: 100%
                     border-bottom: 1px solid $blanco
+                    align-items: center
+                    padding: $b/3 0
                     &:last-child
                         border-bottom: 0
+                    &.active
+                        a.nav-link
+                            color: $rojo
+                            svg
+                                path.icons
+                                    fill: $rojo
+                        &:hover
+                            a.nav-link
+                                color: $grisheader
+                            svg
+                                path.icons
+                                    fill: $grisheader !important
+                            
                     a.nav-link
-                        color: $blanco
+                        color: #fff
+                        display: grid
+                        grid-template-columns: 80px 1fr
+                        grid-template-rows: 1fr
+                        align-items: center
+                        
+                        svg
+                            height: 35px
+                            margin: 0 auto
+                            path.icons
+                                fill-rule: evenodd
+                                clip-rule: evenodd
+                                fill:#fff
                         &:hover
                             color: $grisheader
+                            svg
+                                path.icons
+                                    fill-rule: evenodd
+                                    clip-rule: evenodd
+                                    fill: $grisheader
             .badge
                 margin: 0 auto
                 width: 75%
+                @media (max-width:767px)
+                    display: none
+                
+    .content
+        padding: $b*2 $b*2 $b*2 $b*3
+        @media (max-width:767px)
+            padding: $b $b $b*2 $b
 
+header
+    text-align: right
+    h3
+        color: $negro
+        font-size: $b*2
+    p.date
+        font-size: $b*1.5
+        @media (max-width:767px)
+            font-size: $b
+    ul
+        padding-left: 0
+        display: flex
+        margin: $b/2 0
+        justify-content: flex-end
+        li
+            list-style: none
+            margin: 0 0 0 $b/2
+            a
+                text-transform: uppercase
+                font-size: $b*1.25
+
+
+.title-page
+    h1
+        letter-spacing: 1px
+        font-size: $b*2.25
+
+.advice-data
+    border-bottom: 1px solid $grisheader
+    margin-bottom: $b*2
+    h2
+        color: $rojo
+        font-size: $b*1.5
+        letter-spacing: 1px
+        font-weight: bold
+        margin: 0 0 $b/2 0
+    ul.client-data
+        padding-left: 0
+        li
+            list-style: none
+            span
+                font-weight: bold
+                margin-right: $b/4
+
+.regular-form
+    .form-group
+        label
+            font-weight: bold
+        .end
+            margin-top: $b*1.25
+        
 
