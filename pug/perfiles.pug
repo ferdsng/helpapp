@@ -37,8 +37,8 @@ html(lang="es_MX")
 
                                     |
                                     |
-                                    ul.navbar-nav.active
-                                        li.nav-item.active
+                                    ul.navbar-nav
+                                        li.nav-item
                                             a.nav-link(href="dashboard.html")
                                                 svg(version="1.1", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", x="0px", y="0px", viewBox="0 0 91.02 91.02", style="overflow:visible;enable-background:new 0 0 91.02 91.02;", xml:space="preserve")
                                                     path.icons(d="M58.26,91.02c-1.99,0-3.61-1.62-3.61-3.61V61.91L36.4,61.87l-0.03,25.54c0,1.99-1.62,3.61-3.61,3.61H18.18 c-4,0-7.25-3.25-7.25-7.25V50.94h-5.5C2.44,50.94,0,48.5,0,45.51c0-1.44,0.58-2.84,1.59-3.86L42.98,1.03 C43.66,0.36,44.56,0,45.51,0s1.85,0.37,2.53,1.04l41.35,40.59c1.04,1.04,1.63,2.45,1.63,3.89c0,2.99-2.44,5.43-5.43,5.43h-5.5 v32.83c0,4-3.25,7.25-7.25,7.25H58.26z M72.84,83.8l0.03-36.47c0-1.99,1.62-3.61,3.61-3.61h4.73L45.51,8.67L9.8,43.72l4.73,0 c1.99,0,3.61,1.62,3.61,3.61v36.44l11,0.03V61.91c0-4,3.25-7.26,7.25-7.26h18.22c4,0,7.25,3.26,7.25,7.26V83.8H72.84z")
@@ -64,7 +64,7 @@ html(lang="es_MX")
                                                     path.icons(d="M17.67,2.88c-0.33,0-0.66,0.29-0.64,0.64c0.02,0.35,0.28,0.64,0.64,0.64c0.33,0,0.66-0.29,0.64-0.64 C18.3,3.17,18.03,2.88,17.67,2.88z")
                                                     path.icons(d="M15.49,2.88c-0.33,0-0.66,0.29-0.64,0.64c0.02,0.35,0.28,0.64,0.64,0.64c0.33,0,0.66-0.29,0.64-0.64 C16.11,3.17,15.84,2.88,15.49,2.88z")
                                                 span Mensajes
-                                        li.nav-item
+                                        li.nav-item.active
                                             a.nav-link(href="perfiles.html")
                                                 svg(version="1.1", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", x="0px", y="0px", viewBox="0 0 14.84 17.62", style="overflow:visible;enable-background:new 0 0 14.84 17.62", xml:space="preserve")
                                                     path.icons(d="M14.84,17.62h-1.79c0-3.01-2.52-5.46-5.63-5.46c-3.11,0-5.63,2.45-5.63,5.46H0c0-3.99,3.33-7.25,7.42-7.25 C11.51,10.37,14.84,13.62,14.84,17.62L14.84,17.62z")
@@ -80,6 +80,7 @@ html(lang="es_MX")
                                     |
                                     .badge
                                         img.img-fluid(src="images/helpapp-logo-badge.png")
+                        
                                 
                                 
 
@@ -88,135 +89,56 @@ html(lang="es_MX")
                             header
                                 .row
                                     .col-lg-12.col-md-12.col-sm-12.col-12
-                                        h3 Dashboard
+                                        h3 Perfiles
+                                        ul.buttons-profiles
+                                            li
+                                                a.btn.btn-dark(href="nuevo-usuario.html") Añadir Usuario
+                                            li
+                                                a.btn.btn-secondary(href="nueva-jerarquia.html") Añadir Jerarquia
 
                             .row
-                                .col-xl-6.col-lg-12.col-md-12.col-sm-12.col-12
-                                    figure.highcharts-figure
-                                        .total-number
-                                            p.number 80
-                                                span QUEJAS
-                                        #pieChart1
-                                |
-                                |
-                                .col-xl-6.col-lg-12.col-md-12.col-sm-12.col-12
-                                    figure.highcharts-figure
-                                        #stackedBar2
+                                .col-lg-12.col-md-12.col-sm-12.col-12
+                                    .title-page
+                                        h1 Perfiles
+
+                            .row.no-gutters
+                                .col-12
+                                    .table-display
+                                        .table-responsive
+                                            table.display#example
+                                                thead
+                                                    tr
+                                                        th Usuarios
+                                                        th Correo
+                                                        th Jerarquia
+                                                tbody
+                                                    tr.parent
+                                                        td José David Gutiérrez
+                                                        td personal@kiavallejo.com
+                                                        td Director
+                                                    tr.level
+                                                        td Manuel Ramírez Hernández
+                                                        td nombre@tuempresa.com
+                                                        td Gerencia General
+                                                    tr.sublevel
+                                                        td Raúl Alejandro García
+                                                        td nombre@tuempresa.com
+                                                        td Gerencia de ventas
+                                                    
+
+                                                
 
 
         |
         |
         script(src="js/jquery-3.5.1.min.js")
         script(src="js/bootstrap.bundle.min.js")
-        script(src="js/highcharts.js")
-        script(src="js/drilldown.js")
-        script(src="js/exporting.js")
-        script(src="js/export-data.js")
-        script(src="js/accessibility.js")
+        script(src="js/jquery.dataTables.min.js")
         script.
-            // QUEJAS DE TODAS LAS AGENCIAS
-            Highcharts.chart('pieChart1', {
-                chart: {
-                    backgroundColor: '',
-                    type: 'pie',
-                    options3d: {
-                        enabled: false,
-                        alpha: 45
+            $(document).ready(function() {
+                $('#example').DataTable({
+                    "language": {
+                        "url": "js/Spanish.json"
                     }
-                },
-                title: {
-                    text: 'QUEJAS DE LA SUCURSAL'
-                },
-                subtitle: {
-                    text: 'Mes Diciembre'
-                },
-                legend: {
-                    enabled: true
-                },
-                credits: {
-                    enabled: false
-                },
-                plotOptions: {
-                    pie: {
-                        innerSize: 150,
-                        depth: 0,
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                        },
-                        showInLegend: true,
-                    }
-                },
-                series: [{
-                    name: 'Quejas',
-                    colorByPoint: true,
-                    data: [{
-                        name: 'Resuelto',
-                        y: 40,
-                        sliced: false,
-                        selected: false,
-                        color: '#009833'
-                    }, {
-                        name: 'En Proceso',
-                        y: 20,
-                        color: '#ffcb00'
-                    }, {
-                        name: 'No Resuelto',
-                        y: 15,
-                        color: '#db0024'
-                    }, {
-                        name: 'Por Resolver',
-                        y: 5,
-                        color: '#4d4d4d'
-                    }]
-                }]
-            });
-
-
-
-            //TOTAL QUEJAS POR PUNTO DE VENTA
-            Highcharts.chart('stackedBar2', {
-                chart: {
-                    type: 'bar'
-                },
-                title: {
-                    text: 'TOTAL QUEJAS POR PUNTO DE VENTA'
-                },
-                xAxis: {
-                    categories: ['Refacciones', 'Ventas', 'Atención al cliente', 'Servicio', 'Gerencia']
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: null
-                    }
-                },
-                legend: {
-                    reversed: true
-                },
-                credits: {
-                    enabled: false
-                },
-                plotOptions: {
-                    series: {
-                    stacking: 'normal'
-                    }
-                },
-                series: [{
-                    name: 'Por Resolver',
-                    data: [1, 2, 4, 3, 2],
-                    color: '#4d4d4d'
-                }, {
-                    name: 'No Resuelto',
-                    data: [4, 3, 2, 5, 4],
-                    color: '#db0024'
-                }, {
-                    name: 'En Proceso',
-                    data: [7, 5, 6, 4, 5],
-                    color: '#ffcb00'
-                }, {
-                    name: 'Resuelto',
-                    data: [12, 10, 9, 11, 8],
-                    color: '#009833'
-                }]
+                });
             });
