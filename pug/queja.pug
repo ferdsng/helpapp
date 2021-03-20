@@ -113,7 +113,7 @@ html(lang="es_MX")
                                 .regular-form
                                     form
                                         .row 
-                                            .col-xl-4.col-lg-6.col-md-12.col-sm-12.col-12
+                                            .col-xl-6.col-lg-6.col-md-12.col-sm-12.col-12
                                                 .form-row
                                                     .form-group.col-md-12
                                                         label(for="problemaCliente") ¿Área en donde el cliente tuvo el problema?
@@ -141,7 +141,7 @@ html(lang="es_MX")
                                                         select.form-control#puntoVenta
                                                             option Refacciones 
 
-                                            .col-xl-4.col-lg-6.col-md-12.col-sm-12.col-12
+                                            .col-xl-6.col-lg-6.col-md-12.col-sm-12.col-12
                                                 h5 Tipo de Problema
                                                 .form-check
                                                     input.form-check-input#radio1(type="radio" name="exampleRadios" value="option1" checked)
@@ -165,7 +165,10 @@ html(lang="es_MX")
                                                     input.form-check-input#radio7(type="radio" name="exampleRadios" value="option7")
                                                     label.form-check-label(for="radio7") Otro Motivo
                                                 .form-group
-                                                    textarea.form-control#comentarioCliente(name="comentarioCliente", cols="30", rows="5")
+                                                    textarea.form-control#comentarioCliente(name="comentarioCliente", cols="30", rows="3")
+                                                .form-group
+                                                        label(for="sugerenciaMejora") Sugerencia para mejorar el servicio
+                                                        textarea.form-control#comentarioCliente(name="sugerenciaMejora", cols="30", rows="2", placeholder="")
                                                 |
                                                 |
                                                 h5 Estatus del caso
@@ -181,7 +184,7 @@ html(lang="es_MX")
                                                 |
                                                 |
                                                 .form-group
-                                                    a.btn.btn-dark.btn-lg.btn-block.end(href="#") Guardar
+                                                    a.btn.btn-dark.btn-lg.end(href="#") Guardar
 
                                                 
 

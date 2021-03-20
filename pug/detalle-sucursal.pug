@@ -94,19 +94,14 @@ html(lang="es_MX")
                                 .col-xl-6.col-lg-12.col-md-12.col-sm-12.col-12
                                     figure.highcharts-figure
                                         .total-number
-                                            p.number 150
+                                            p.number 80
                                                 span QUEJAS
                                         #pieChart1
                                 |
                                 |
                                 .col-xl-6.col-lg-12.col-md-12.col-sm-12.col-12
                                     figure.highcharts-figure
-                                        #stackedBar1
-                            |
-                            .row
-                                .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-12
-                                    figure.highcharts-figure
-                                        #columnChart1
+                                        #stackedBar2
 
 
         |
@@ -130,7 +125,7 @@ html(lang="es_MX")
                     }
                 },
                 title: {
-                    text: 'QUEJAS DE TODAS LAS AGENCIAS'
+                    text: 'QUEJAS DE LA SUCURSAL'
                 },
                 subtitle: {
                     text: 'Mes Diciembre'
@@ -157,210 +152,71 @@ html(lang="es_MX")
                     colorByPoint: true,
                     data: [{
                         name: 'Resuelto',
-                        y: 200,
+                        y: 40,
                         sliced: false,
                         selected: false,
                         color: '#009833'
                     }, {
                         name: 'En Proceso',
-                        y: 120,
+                        y: 20,
                         color: '#ffcb00'
                     }, {
                         name: 'No Resuelto',
-                        y: 50,
+                        y: 15,
                         color: '#db0024'
                     }, {
                         name: 'Por Resolver',
-                        y: 25,
+                        y: 5,
                         color: '#4d4d4d'
                     }]
                 }]
             });
 
-            //TOTAL QUEJAS POR AGENCIA
-            Highcharts.chart('stackedBar1', {
-                chart: {
-                    type: 'bar'
-                },
-                title: {
-                    text: 'TOTAL DE QUEJAS POR AGENCIA'
-                },
-                xAxis: {
-                    type: 'category',
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                    text: '',
-                    align: 'high'
-                    },
-                    labels: {
-                    overflow: 'justify'
-                    }
-                },
-                plotOptions: {
-                    bar: {
-                        dataLabels: {
-                            enabled: true
-                        }
-                    },
-                    series: {
-                        colorByPoint: true
-                    }
-                },
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'top',
-                    x: -40,
-                    y: 80,
-                    floating: true,
-                    borderWidth: 1,
-                    backgroundColor:
-                    Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-                    shadow: true,
-                    enabled: false
-                },
-                credits: {
-                    enabled: false
-                },
-                series: [{
-                    name: 'Quejas',
-                    data: [{
-                        name: 'Agencia 1',
-                        y: 35,
-                        color: '#23527e'
-                    }, {
-                        name: 'Agencia 2',
-                        y: 25,
-                        color: '#ef8f34'
-                    }, {
-                        name: 'Agencia 3',
-                        y: 20,
-                        color: '#660066'
-                    }, {
-                        name: 'Agencia 4',
-                        y: 38,
-                        color: '#40a7bf'
-                    }, {
-                        name: 'Agencia 5',
-                        y: 12,
-                        color: '#c13e9f'
-                    }]
-                }]
-                });
+
 
             //TOTAL QUEJAS POR PUNTO DE VENTA
-            /*
             Highcharts.chart('stackedBar2', {
                 chart: {
                     type: 'bar'
                 },
                 title: {
-                    text: 'TOTAL QUEJAS POR AGENCIA'
+                    text: 'TOTAL QUEJAS POR PUNTO DE VENTA'
                 },
                 xAxis: {
-                    categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                    categories: ['Refacciones', 'Ventas', 'Atención al cliente', 'Servicio', 'Gerencia']
                 },
                 yAxis: {
                     min: 0,
                     title: {
-                    text: 'Total fruit consumption'
+                        text: null
                     }
+                },
+                legend: {
+                    reversed: true
+                },
+                credits: {
+                    enabled: false
                 },
                 plotOptions: {
                     series: {
                     stacking: 'normal'
                     }
                 },
-                credits: {
-                    enabled: false
-                },
                 series: [{
-                    name: 'Agencia 1',
-                    data: [5, 3, 4, 7],
-                    color: '#23527e'
-                }, {
-                    name: 'Agencia 2',
-                    data: [2, 2, 3, 2],
-                    color: '#ef8f34'
-                }, {
-                    name: 'Agencia 3',
-                    data: [3, 4, 4, 2],
-                    color: '#3dc3c2'
-                }]
-            });
-            */
-
-            // DATOS ANUALES POR SUCURSAL
-            Highcharts.chart('columnChart1', {
-                chart: {
-                    type: 'column',
-                    backgroundColor: '#fff'
-                },
-                title: {
-                    text: 'DATOS ANUALES POR SUCURSAL'
-                },
-                xAxis: {
-                    categories: [
-                        'Enero',
-                        'Febrero',
-                        'Marzo',
-                        'Abril',
-                        'Mayo',
-                        'Junio',
-                        'Julio',
-                        'Agosto',
-                        'Septiembre',
-                        'Octubre',
-                        'Noviembre',
-                        'Diciembre'
-                    ],
-                    crosshair: true
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: ''
-                    }
-                },
-                tooltip: {
-                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                        '<td style="padding:0"><b>{point.y}</b></td></tr>',
-                    footerFormat: '</table>',
-                    shared: true,
-                    useHTML: true
-                },
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0
-                    }
-                },
-                credits: {
-                    enabled: false
-                },
-                series: [{
-                    name: 'Resuelto',
-                    data: [49, 71, 10., 129, 144, 176, 135, 148, 216, 194, 95, 54],
-                    color: '#009833'
-
-                }, {
-                    name: 'En Proceso',
-                    data: [83, 78, 98, 93, 106, 84, 105, 104, 91, 83, 106, 92],
-                    color: '#ffcb00'
-
+                    name: 'Por Resolver',
+                    data: [1, 2, 4, 3, 2],
+                    color: '#4d4d4d'
                 }, {
                     name: 'No Resuelto',
-                    data: [48, 38, 39, 41, 47, 48, 59, 59, 52, 65, 59, 51],
+                    data: [4, 3, 2, 5, 4],
                     color: '#db0024'
-
                 }, {
-                    name: 'Por Resolver',
-                    data: [42, 33, 34, 39, 52, 75, 57, 60, 47, 39, 46, 51],
-                    color: '#4d4d4d'
-
+                    name: 'En Proceso',
+                    data: [7, 5, 6, 4, 5],
+                    color: '#ffcb00'
+                }, {
+                    name: 'Resuelto',
+                    data: [12, 10, 9, 11, 8],
+                    color: '#009833'
                 }]
             });
-        

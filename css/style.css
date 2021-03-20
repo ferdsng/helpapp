@@ -2,7 +2,7 @@
 @import url("jquery.fancybox.min.css");
 @import url("jquery.dataTables.min.css");
 body {
-  background: #f2f2f2;
+  background: #fff;
   font-size: 16px; }
 
 .wrapper {
@@ -41,7 +41,13 @@ body {
           font-size: 0.8rem; } }
     .wrapper.login .footer p.legal {
       text-align: center;
-      font-size: 1rem; }
+      font-size: 1rem;
+      line-height: 1; }
+      .wrapper.login .footer p.legal svg {
+        width: 140px;
+        margin-left: 0.5rem; }
+        .wrapper.login .footer p.legal svg path {
+          fill: #1322a3; }
 
 #trueModal {
   max-width: 1000px; }
@@ -82,7 +88,7 @@ body {
         .dashboard .sidebar-menu .menu-mobile .adviser-info .avatar-user {
           grid-column: 1/2; } }
       .dashboard .sidebar-menu .menu-mobile .adviser-info .avatar-user img {
-        width: 60%;
+        width: 50%;
         display: block;
         margin: 0 auto; }
         @media (max-width: 767px) {
@@ -222,3 +228,66 @@ header {
 
 .regular-form .form-group .end {
   margin-top: 1.25rem; }
+
+.table-display table.display.no-footer {
+  border-bottom: 0; }
+
+.table-display table.display thead {
+  background: #666;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 0; }
+  .table-display table.display thead tr th {
+    font-weight: 400; }
+
+.table-display table.display tbody {
+  border-bottom: 0; }
+  .table-display table.display tbody tr td span.status-badge {
+    display: inline-block;
+    margin-right: 0.5rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%; }
+    .table-display table.display tbody tr td span.status-badge.resuelto {
+      background: #009833; }
+    .table-display table.display tbody tr td span.status-badge.enproceso {
+      background: #ffcb00; }
+    .table-display table.display tbody tr td span.status-badge.noresuelto {
+      background: #b90000; }
+    .table-display table.display tbody tr td span.status-badge.poratender {
+      background: #666; }
+  .table-display table.display tbody tr td a.button-doc {
+    border: 1px solid #666;
+    padding: 0.25rem 1rem;
+    border-radius: 3px;
+    color: #1a1a1a;
+    text-decoration: none; }
+    .table-display table.display tbody tr td a.button-doc:hover {
+      background: #1a1a1a;
+      color: #fff; }
+
+.highcharts-figure {
+  position: relative; }
+  .highcharts-figure .total-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center; }
+    .highcharts-figure .total-number p.number {
+      color: #1a1a1a;
+      font-weight: bold;
+      font-size: 3.25rem;
+      line-height: 1.75rem;
+      margin-bottom: 0;
+      margin-top: 2.5rem; }
+      .highcharts-figure .total-number p.number span {
+        display: block;
+        font-size: 1.3rem; }

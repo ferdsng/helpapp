@@ -13,7 +13,7 @@ $amarillo: #ffcb00
 
 
 body
-    background: #f2f2f2
+    background: #fff
     font-size: 16px
 
 .wrapper
@@ -51,6 +51,12 @@ body
             p.legal
                 text-align: center
                 font-size: $b
+                line-height: 1
+                svg
+                    width: 140px
+                    margin-left: $b/2
+                    path
+                        fill: #1322a3
 
 #trueModal
     max-width: 1000px
@@ -90,7 +96,7 @@ body
                     @media (max-width:767px)
                         grid-column: 1/2
                     img
-                        width: 60%
+                        width: 50%
                         display: block
                         margin: 0 auto
                         @media (max-width:767px)
@@ -235,4 +241,71 @@ header
         .end
             margin-top: $b*1.25
         
+
+.table-display
+    table.display
+        &.no-footer
+            border-bottom: 0
+        thead
+            background: $grisheader
+            color: $blanco
+            text-transform: uppercase
+            border-bottom: 0
+            tr
+                th
+                    font-weight: 400
+        tbody
+            border-bottom: 0
+            tr
+                td
+                    span.status-badge
+                        display: inline-block
+                        margin-right: $b/2
+                        width: 14px
+                        height: 14px
+                        border-radius: 50%
+                        &.resuelto
+                            background: $verde
+                        &.enproceso
+                            background: $amarillo
+                        &.noresuelto
+                            background: $rojo
+                        &.poratender
+                            background: $grisheader
+                    a.button-doc
+                        border: 1px solid $grisheader
+                        padding: $b/4 $b
+                        border-radius: 3px
+                        color: $negro
+                        text-decoration: none
+                        &:hover
+                            background: $negro
+                            color: $blanco
+
+.highcharts-figure
+    position: relative
+    .total-number
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 0
+        width: 100%
+        height: 100%
+        text-align: center
+        display: grid
+        grid-template-columns: 1fr
+        grid-template-rows: 1fr
+        justify-items: center
+        align-items: center
+        p.number
+            color: $negro
+            font-weight: bold
+            font-size: $b*3.25
+            line-height: $b*1.75
+            margin-bottom: 0
+            margin-top: $b*2.5
+            span
+                display: block
+                font-size: $b*1.3
+
 
